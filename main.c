@@ -13,7 +13,7 @@ float strToFloat(char *s);
 boolean IsExprValid(char *s);
 
 int main() {
-  char str[1000];
+  char str[1000], copiedStr[1000];
 
   FILE *deltaPtr;
   deltaPtr = fopen("delta.txt", "r");
@@ -26,6 +26,7 @@ int main() {
   fclose(deltaPtr);
 
   fgets(str,1000,stdin);
+  strcpy(copiedStr, str);
   if (IsExprValid(str)) {
     printf("valid\n");
   } else {
