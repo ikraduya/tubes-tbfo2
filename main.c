@@ -4,6 +4,7 @@
 #include "stackt.h"
 #include "pdavalidator.h"
 #include "BuildTree.h"
+#include "parser.h"
 
 Delta D[deltaCount+1];
 int i;  // iterator
@@ -31,6 +32,7 @@ int main() {
   if (IsExprValid(str)) {
     GrowTREE(copiedStr,&T);
     PrintTree(T,0);
+    printf("Hasil : %f",HitungHasilTree(T));
   } else {
     printf("not valid\n");
   }
