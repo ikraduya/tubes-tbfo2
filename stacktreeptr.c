@@ -1,12 +1,12 @@
 #include "stacktreeptr.h"
 
 void CreateEmpty (StackTreePtr *S){
-  Top(*S) = Nil;
-  InfoTop(*S) = Nil;
+  Top(*S) = NilStack;
+  InfoTop(*S) = NilElmtS;
 }
 
 boolean IsEmpty (StackTreePtr S){
-  return (Top(S) == Nil);
+  return (Top(S) == NilStack);
 }
 
 boolean IsFull (StackTreePtr S){

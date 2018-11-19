@@ -1,24 +1,24 @@
 #include "stackt.h"
 
-void CreateEmpty (Stack *S){
-    Top(*S) = Nil;
-    InfoTop(*S) = Nil;
+void CreateEmptyS (Stack *S){
+    TopS(*S) = NilS;
+    InfoTopS(*S) = NilS;
 }
 
-boolean IsEmpty (Stack S){
-    return (Top(S) == Nil);
+boolean IsEmptyS (Stack S){
+    return (TopS(S) == NilS);
 }
 
-boolean IsFull (Stack S){
-    return (Top(S) == MaxEl);
+boolean IsFullS (Stack S){
+    return (TopS(S) == MaxElS);
 }
 
-void Push (Stack * S, infotype X){
-    Top(*S)++;
-    InfoTop(*S) = X;
+void PushS (Stack * S, infotypeS X){
+    TopS(*S)++;
+    InfoTopS(*S) = X;
 }
 
-void Pop (Stack * S, infotype* X){
-    *X = InfoTop(*S);
-    Top(*S)--;
+void PopS (Stack * S, infotypeS* X){
+    *X = InfoTopS(*S);
+    TopS(*S)--;
 }

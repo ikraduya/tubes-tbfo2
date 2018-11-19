@@ -6,7 +6,7 @@
 /* *** Konstruktor *** */
 
 /* Manajemen Memory */
-addrTNode AlokNode (infotypeOp op, infotypeBil bil);
+addrTNode AlokNode (infotypeOp op, infotypeBil bil)
 /* Mengirimkan addrTNode hasil alokasi sebuah elemen op atau bil */
 /* Jika alokasi berhasil, maka addrTNode tidak Nil, dan misalnya menghasilkan P,
   maka AkarOp(P) = '', AkarBil(P)=X, Parent(P)=Nil, Left(P)=Nil, dan Right(P)=Nil  */
@@ -41,7 +41,7 @@ boolean IsTreeEmpty (Tree P)
 boolean IsOneElmt (Tree P)
 /* Mengirimkan true jika P adalah pohon parsing binary dengan satu elemen */
 {
-  return (P != Nil && Left(P) == Nil && Right(P) == Nil && Parent(P) == Nil);
+  return (P != Nil && Right(P) == Nil);
 }
 
 
@@ -53,19 +53,19 @@ void PrintTree(Tree P, int indent)
   int i;
 
   if (!IsTreeEmpty(P)) {
-    if (Akar(P) != Nil) {
-      for (i=0; i<indent; i++) {
-        printf("-");
-      }
-      if (AkarOp(P) == )
-      printf("%s\n", Akar(P));
-      if (Left(P) != Nil) {
-        PrintTree(Left(P), indent+1);
-      }
-      if (Right(P) != Nil) {
-        PrintTree(Right(P), indent+1);
-      }
+    for (i=0; i<indent; i++) {
+      printf("=");
     }
-    
+    if (AkarOp(P) == '#' )
+      printf("%.2f\n", AkarBil(P));
+    else
+      printf("%c\n", AkarOp(P));
+    if (Left(P) != Nil) {
+      PrintTree(Left(P), indent+1);
+    }
+    if (Right(P) != Nil) {
+      PrintTree(Right(P), indent+1);
+
+    }
   }
 }

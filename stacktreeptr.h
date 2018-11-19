@@ -9,9 +9,10 @@
 #include "boolean.h"
 #include "tree.h"
 
-#define Nil 0
+#define NilElmtS NULL
+#define NilStack 0
 #define MaxEl 100
-/* Nil adalah stack dengan elemen kosong . */
+/* NilStack adalah stack dengan elemen kosong . */
 /* Karena indeks dalam bhs C dimulai 0 maka tabel dg indeks 0 tidak dipakai */
 
 typedef addrTNode infotypeStackTreePtr;
@@ -23,7 +24,7 @@ typedef struct {
 	infotypeStackTreePtr T[MaxEl+1]; /* tabel penyimpan elemen */
 	address TOP;  /* alamat TOP: elemen puncak */
 } StackTreePtr;
-/* Definisi stack S kosong : S.TOP = Nil */
+/* Definisi stack S kosong : S.TOP = NilStack */
 /* Elemen yang dipakai menyimpan nilai StackTreePtr T[1]..T[MaxEl] */
 /* Jika S adalah StackTreePtr maka akses elemen : */
    /* S.T[(S.TOP)] untuk mengakses elemen TOP */
@@ -39,7 +40,7 @@ void CreateEmpty (StackTreePtr *S);
 /* I.S. sembarang; */
 /* F.S. Membuat sebuah stack S yang kosong berkapasitas MaxEl */
 /* jadi indeksnya antara 1.. MaxEl+1 karena 0 tidak dipakai */
-/* Ciri stack kosong : TOP bernilai Nil */
+/* Ciri stack kosong : TOP bernilai NilStack */
 
 /* ************ Predikat Untuk test keadaan KOLEKSI ************ */
 boolean IsEmpty (StackTreePtr S);

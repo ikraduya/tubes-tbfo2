@@ -7,7 +7,7 @@ int findTransitionTableIdx(int state, char sym, Stack S)
   int i, idx;
   boolean found = false;
   for (i=0; i<deltaCount; i++) {
-    if ((state == State(D[i])) && (Input(D[i]) == sym) && (TopStack(D[i]) == InfoTop(S))) {
+    if ((state == State(D[i])) && (Input(D[i]) == sym) && (TopStack(D[i]) == InfoTopS(S))) {
       idx = i;
       found = true;
       break;
@@ -35,7 +35,7 @@ float strToFloat(char *s)
   }
 
   comma = false;
-  
+
   for (; *s; s++) {
     if (*s == '.') {
       comma = true;
@@ -58,9 +58,9 @@ boolean IsExprValid(char *s)
   boolean valid = false,
           stuck = false;
   int currentQ = 0;
-  CreateEmpty(&S);
+  CreateEmptyS(&S);
 
-  Push(&S, 'Z');
+  PushS(&S, 'Z');
   while (*s) {
     if (*s != '\n' && !stuck) {
       transition(&currentQ, *s, &S, &stuck);
@@ -74,23 +74,23 @@ boolean IsExprValid(char *s)
   }
 }
 
-void transition(int *state, char sym, Stack *S, boolean * stuck) 
+void transition(int *state, char sym, Stack *S, boolean * stuck)
 /* transisi state dan merubah stack sesuai dengan tabel transisi */
 {
   int idx;
   char popped;
-  
+
   idx = findTransitionTableIdx(*state, sym, *S);
   if (idx == -999) {
     *stuck = true;
   } else {
-    // printf("%s %s %s %s %s\n", 
+    // printf("%s %s %s %s %s\n",
     //       D[idx].state, D[idx].inp, D[idx].topStack, CStack(D[idx]), CState(D[idx]));
     *state = CState(D[idx])[1] - '0';
-    if (strcmp(CStack(D[idx]), "XZ") == 0 || strcmp(CStack(D[idx]), "XX") == 0) {  // Push X to stack
-      Push(S, 'X');
+    if (strcmp(CStack(D[idx]), "XZ") == 0 || strcmp(CStack(D[idx]), "XX") == 0) {  // PushS X to stack
+      PushS(S, 'X');
     } else if (strcmp(CStack(D[idx]), "E") == 0) {  // Pop Stack
-      Pop(S, &popped);
+      PopS(S, &popped);
     } else if (strcmp(CStack(D[idx]), "X") == 0 || strcmp(CStack(D[idx]), "Z") == 0) {
       // do nothing
     }

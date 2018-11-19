@@ -4,9 +4,9 @@
 /* Modul lain yang digunakan : */
 #include <stdlib.h>
 #include <stdio.h>
-#include <ADTUtama.h>
-#include "strstackqueue.h"
 #include "boolean.h"
+
+#define Nil NULL
 
 typedef float infotypeBil;
 typedef char infotypeOp;
