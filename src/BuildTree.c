@@ -8,8 +8,8 @@ void DecimalCase (char *inp,int *count, int idx)
 /*F.S count menjadi jumlah angka dibelakang koma, inp menjadi string angka dibelakang koma*/
 {
   char temp[10] = {0};
-  int idxB = 0;
-  for (int i = idx+1; i <= strlen(inp)-1;i++){
+  int idxB = 0, i;
+  for (i = idx+1; i <= strlen(inp)-1;i++){
     temp[idxB] = inp[i];
     idxB++;
   }
@@ -23,8 +23,8 @@ void MinusCase (char *inp)
 /*F.S. inp menjadi inputan tanpa minus*/
 {
   char temp[10] = {0};
-  int idx = 0;
-  for (int i = 1; i <= strlen(inp)-1;i++){
+  int idx = 0, i;
+  for (i = 1; i <= strlen(inp)-1;i++){
     temp[idx] = inp[i];
     idx++;
   }
@@ -36,11 +36,11 @@ float KarakterToFloat (char *inp)
 {
   int decCount;
   int decHeadCounter = 0;
-  int length;
+  int length, i;
   boolean isDec = false;
   length = strlen(inp);
   float hasil = 0.0;
-  for (int i = 0; i <= length-1;i++){
+  for (i = 0; i <= length-1;i++){
     if (inp[i] == '.'){
       isDec = true;
       break;
