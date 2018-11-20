@@ -77,6 +77,8 @@ q2 . X YX q4
 q2 . Z YZ q4
 q3 ( Z XZ q0
 q3 ( X XX q0
+q3 - Z Z q1
+q3 - X X q1
 q3 0 Z Z q2
 q3 1 Z Z q2
 q3 2 Z Z q2
