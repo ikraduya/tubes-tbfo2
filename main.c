@@ -25,16 +25,11 @@ int main() {
       );
   }
   fclose(deltaPtr);
-
-  //fgets(str,1000,stdin);
   scanf("%s",str);
 
-  //strtok(str,"\n");
   strcpy(copiedStr, str);
   if (IsExprValid(str)) {
-    printf("valid %s\n",copiedStr);
     GrowTREE(copiedStr,&T);
-    printf("---------\n");
     PrintTree(T,0);
   } else {
     printf("not valid\n");
