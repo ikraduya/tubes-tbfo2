@@ -42,14 +42,14 @@ int main() {
       GrowTREE(copiedStr,&T);
       hasil = HitungHasilTree(T);
       if (isnormal(hasil)) {
-        printf("Hasil: %.6f\n\n", hasil);
+        printf("Hasil: %.6f\n", hasil);
       } else {
         printf("MATH ERROR\n");
       }
     } else {
       printf("SYNTAX ERROR\n");
     }
-    printf("Coba Lagi? (Y/n): ");
+    printf("\nCoba Lagi? (Y/n): ");
     scanf("\n%c", &lagi);
     if (lagi == 'n' || lagi == 'N') {
       again = false;
