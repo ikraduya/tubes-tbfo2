@@ -41,10 +41,10 @@ int main() {
     if (IsExprValid(str)) {
       GrowTREE(copiedStr,&T);
       hasil = HitungHasilTree(T);
-      if (isnormal(hasil)) {
-        printf("Hasil: %.6f\n", hasil);
-      } else {
+      if (isinff(hasil) || isnanf(hasil)) {
         printf("MATH ERROR\n");
+      } else {
+        printf("Hasil: %.6f\n", hasil);
       }
     } else {
       printf("SYNTAX ERROR\n");
