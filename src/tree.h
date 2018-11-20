@@ -56,9 +56,4 @@ boolean IsTreeEmpty (Tree P);
 boolean IsOneElmt (Tree P);
 /* Mengirimkan true jika P adalah pohon dengan satu elemen */
 
-/* *** Input / Output *** */
-void PrintTree(Tree P, int indent);
-/* I.S. P mungkin kosong */
-/* Mencetak tree ke layar */
-
 #endif

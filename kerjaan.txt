@@ -1,3 +1,0 @@
-ikra: adt tree bidirectional, stack alamat root, last_inserted, current_root
-azhar: proses insert di tree
-nando: evaluator ekspresi

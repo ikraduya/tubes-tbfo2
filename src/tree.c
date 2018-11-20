@@ -43,29 +43,3 @@ boolean IsOneElmt (Tree P)
 {
   return (P != Nil && Right(P) == Nil);
 }
-
-
-/* *** Input / Output *** */
-void PrintTree(Tree P, int indent)
-/* I.S. P mungkin kosong */
-/* Mencetak tree ke layar */
-{
-  int i;
-
-  if (!IsTreeEmpty(P)) {
-    for (i=0; i<indent; i++) {
-      printf("=");
-    }
-    if (AkarOp(P) == '#' )
-      printf("%.2f\n", AkarBil(P));
-    else
-      printf("%c\n", AkarOp(P));
-    if (Left(P) != Nil) {
-      PrintTree(Left(P), indent+1);
-    }
-    if (Right(P) != Nil) {
-      PrintTree(Right(P), indent+1);
-
-    }
-  }
-}

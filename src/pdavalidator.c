@@ -91,8 +91,6 @@ void transition(int *state, char sym, Stack *S, boolean * stuck)
   if (idx == -999) {
     *stuck = true;
   } else {
-    // printf("%s %s %s %s %s\n",
-    //       D[idx].state, D[idx].inp, D[idx].topStack, CStack(D[idx]), CState(D[idx]));
     *state = CState(D[idx])[1] - '0';
     if (strcmp(CStack(D[idx]), "XZ") == 0 || strcmp(CStack(D[idx]), "XX") == 0) {  // PushS X to stack
       PushS(S, 'X');
