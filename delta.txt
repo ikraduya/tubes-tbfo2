@@ -109,6 +109,11 @@ q4 - X X q3
 q4 * X X q3
 q4 / X X q3
 q4 ^ X X q3
+q4 + Y E q3
+q4 - Y E q3
+q4 * Y E q3
+q4 / Y E q3
+q4 ^ Y E q3
 q4 0 Z Z q4
 q4 1 Z Z q4
 q4 2 Z Z q4
