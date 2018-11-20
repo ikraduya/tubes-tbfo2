@@ -1,4 +1,5 @@
 #include "pdavalidator.h"
+#include <stdio.h>
 
 /* Realisasi Fungsi */
 int findTransitionTableIdx(int state, char sym, Stack S)
@@ -68,6 +69,12 @@ boolean IsExprValid(char *s)
     s++;
   }
   if (stuck || currentQ != 2) {
+    if (currentQ != 2) {
+      if (currentQ == 4 && InfoTopS(S) == 'Y') {
+        return true;
+      }
+    }
+
     return false;
   } else {  // currentQ == 2
     return true;
@@ -89,6 +96,8 @@ void transition(int *state, char sym, Stack *S, boolean * stuck)
     *state = CState(D[idx])[1] - '0';
     if (strcmp(CStack(D[idx]), "XZ") == 0 || strcmp(CStack(D[idx]), "XX") == 0) {  // PushS X to stack
       PushS(S, 'X');
+    } else if (strcmp(CStack(D[idx]), "YZ") == 0 || strcmp(CStack(D[idx]), "YX") == 0) { // PushS Y to stack
+      PushS(S, 'Y');
     } else if (strcmp(CStack(D[idx]), "E") == 0) {  // Pop Stack
       PopS(S, &popped);
     } else if (strcmp(CStack(D[idx]), "X") == 0 || strcmp(CStack(D[idx]), "Z") == 0) {
