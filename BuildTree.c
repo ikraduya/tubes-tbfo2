@@ -211,7 +211,6 @@ void GrowTREE(char *inp, Tree *T)
   while (idx <= length-1){
     GetElment(inp,&elmtChar,&elmtAngka,&idx,TTemp);
     TTemp = AlokNode(elmtChar,elmtAngka);
-    printf("%ld %.2f %c\n",TTemp,AkarBil(TTemp),AkarOp(TTemp));
     if (AkarOp(TTemp) == ')'){
       Pop(&S,&TTemp2);
       AkarOp(TTemp2) = '(';
@@ -225,9 +224,5 @@ void GrowTREE(char *inp, Tree *T)
       Push(&S,TTemp);
     }
   }
-  DealokNode(TTemp);
   *T = InfoTop(S);
-  printf("%.2f\n", Right(InfoTop(S)));
-  PrintTree(InfoTop(S),0);
-  printf("+++++++\n");
 }
