@@ -41,7 +41,7 @@ int main() {
     if (IsExprValid(str)) {
       GrowTREE(copiedStr,&T);
       hasil = HitungHasilTree(T);
-      if (isinff(hasil) || isnanf(hasil)) {
+      if (isinf(hasil) || isnan(hasil)) {
         printf("MATH ERROR\n");
       } else {
         printf("Hasil: %.6f\n", hasil);
